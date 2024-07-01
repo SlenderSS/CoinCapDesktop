@@ -4,9 +4,97 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoinCapDesktop"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="800"
+        Width="1100"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
+        <Border Background="{StaticResource Background1}"
+                CornerRadius="15">
+            <Grid Background="{StaticResource Transparent}">
+                <Grid.InputBindings>
+                    <MouseBinding Gesture="LeftClick"
+                                  Command="{StaticResource MoveWindowCommand}" />
+                </Grid.InputBindings>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
+                <Grid Grid.Row="0" >
+
+
+                    <Border Background="{StaticResource HeaderBackground}" CornerRadius="15 15 5 5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="120" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   Content="{Binding Title}"
+                                   Foreground="#d8ecf2"
+                                   FontSize="22"
+                                   VerticalAlignment="Center"
+                                   Margin="30 0" />
+
+                            <StackPanel Grid.Column="1">
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2"
+                                        Orientation="Horizontal"
+                                        FlowDirection="RightToLeft"
+                                        Margin="10 0 20 0">
+                                <Button Style="{StaticResource ExitApp}"
+                                        Command="{StaticResource CloseAppCommand}" />
+                                <Button Style="{StaticResource MinimizeWindowStyle}"
+                                        Command="{StaticResource MinimizeWindowCommand }" />
+                            </StackPanel>
+                        </Grid>
+                        
+                    </Border>
+                    
+                </Grid>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackPanel Grid.Column="0"
+                                Margin="10 30">
+                        <Button Width="180"
+                                Height="60"
+                                Content="Home"
+                                Style="{DynamicResource RoundedButtonStyle}" />
+
+
+                        <Button Width="180"
+                                Height="60"
+                                Content="Coins"
+                                Style="{DynamicResource RoundedButtonStyle}" />
+                        <Button Width="180"
+                                Height="60"
+                                Content="Markets"
+                                Style="{DynamicResource RoundedButtonStyle}" />
+
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <ContentControl Content="{Binding CurrentView}" />
+                    </Grid>
+                </Grid>
+
+
+            </Grid>
+        </Border>
     </Grid>
 </Window>

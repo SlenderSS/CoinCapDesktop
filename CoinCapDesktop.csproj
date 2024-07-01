@@ -10,10 +10,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\close_act.png" />
+    <None Remove="Resources\Images\close_none.png" />
+    <None Remove="Resources\Images\minimize_act.png" />
+    <None Remove="Resources\Images\minimize_no.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\close_act.png" />
+    <Resource Include="Resources\Images\close_none.png" />
+    <Resource Include="Resources\Images\minimize_act.png" />
+    <Resource Include="Resources\Images\minimize_no.png" />
   </ItemGroup>
 
 </Project>

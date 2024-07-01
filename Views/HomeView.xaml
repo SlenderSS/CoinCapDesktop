@@ -1,14 +1,16 @@
-﻿<UserControl x:Class="CoinCapDesktop.Views.AssetsView"
+﻿<UserControl x:Class="CoinCapDesktop.Views.HomeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoinCapDesktop.Views"
-             xmlns:vm="clr-namespace:CoinCapDesktop.ViewModels"
+             xmlns:viewmodels="clr-namespace:CoinCapDesktop.ViewModels"
              mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance vm:AssetsViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DataContext="{d:DesignInstance viewmodels:HomeViewModel}"
+             d:DesignHeight="740" d:DesignWidth="900">
+    <Border Background="{StaticResource Background1}" CornerRadius="0 0 15 0">
+        <Grid>
             
-    </Grid>
+        </Grid>
+    </Border>
 </UserControl>

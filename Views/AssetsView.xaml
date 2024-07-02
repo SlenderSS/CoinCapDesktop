@@ -19,7 +19,6 @@
             </Grid.RowDefinitions>
 
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
-                <Label Content="Search"  FontSize="23" Margin="0 35 10 0" FontFamily="{DynamicResource MaterialDesignFont}"/>
                 <TextBox Margin="0,5,50,10"
                          Text="{Binding AssetFilterText, UpdateSourceTrigger=PropertyChanged}"
                          FontSize="23"

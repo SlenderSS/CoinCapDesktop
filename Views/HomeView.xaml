@@ -22,7 +22,7 @@
                     Value="Horizontal" />
         </Style>
     </UserControl.Resources>
-    <Border Style="{StaticResource BorderViewStyle}">
+    <Border Style="{DynamicResource BorderViewStyle}">
 
 
         <Grid>
@@ -49,13 +49,13 @@
                        Grid.Column="0"
                        Text="MARKET CAP - "
                        HorizontalAlignment="Right"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
 
             <TextBlock Text="{Binding GeneralInfo.MarketCapUsd, Converter={StaticResource CurrencyConverter}}"
                        Grid.Row="1"
                        Grid.Column="1"
                        HorizontalAlignment="Left"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
 
 
             <TextBlock Text="EXCHANGE VOL - "
@@ -75,10 +75,10 @@
                        Grid.Row="3"
                        Grid.Column="0"
                        HorizontalAlignment="Right"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
             <TextBlock Text="{Binding GeneralInfo.Assets}"
                        HorizontalAlignment="Left"
-                       Style="{StaticResource TextBlockStyle}"
+                       Style="{DynamicResource TextBlockStyle}"
                        Grid.Row="3"
                        Grid.Column="1" />
 
@@ -87,9 +87,9 @@
                        Grid.Row="4"
                        Grid.Column="0"
                        HorizontalAlignment="Right"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
             <TextBlock Text="{Binding GeneralInfo.Exchanges}"
-                       Style="{StaticResource TextBlockStyle}"
+                       Style="{DynamicResource TextBlockStyle}"
                        Grid.Row="4"
                        Grid.Column="1" />
 
@@ -99,11 +99,11 @@
                        Grid.Row="5"
                        Grid.Column="0"
                        HorizontalAlignment="Right"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
 
             <TextBlock Text="{Binding GeneralInfo.Markets}"
                        HorizontalAlignment="Left"
-                       Style="{StaticResource TextBlockStyle}"
+                       Style="{DynamicResource TextBlockStyle}"
                        Grid.Row="5"
                        Grid.Column="1" />
 
@@ -113,18 +113,18 @@
                         Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
                 
                 <TextBlock Text="{Binding GeneralInfo.DominateCurrency}"
-                           Style="{StaticResource TextBlockStyle}" />
+                           Style="{DynamicResource TextBlockStyle}" />
 
 
                 <TextBlock Text=" DOM INDEX - "
-                           Style="{StaticResource TextBlockStyle}" />
+                           Style="{DynamicResource TextBlockStyle}" />
             </StackPanel>
 
 
             <TextBlock Text="{Binding GeneralInfo.DomIndex, StringFormat={}{0:#0.00'%'}}"
                        Grid.Row="6"
                        Grid.Column="1"
-                       Style="{StaticResource TextBlockStyle}" />
+                       Style="{DynamicResource TextBlockStyle}" />
 
 
 
@@ -135,7 +135,7 @@
                            Text="Popular cryptocurrency"
                            HorizontalAlignment="Center"
                            FontSize="25"
-                           Style="{StaticResource TextBlockStyle}" />
+                           Style="{DynamicResource TextBlockStyle}" />
 
 
 

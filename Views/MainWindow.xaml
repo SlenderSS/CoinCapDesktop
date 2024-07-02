@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoinCapDesktop"
         WindowStartupLocation="CenterScreen"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
@@ -32,20 +33,17 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
-                                <ColumnDefinition Width="150" />
                                 <ColumnDefinition Width="120" />
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Column="0"
                                    Content="{Binding Title}"
-                                   Foreground="#d8ecf2"
+                                   Foreground="{StaticResource FontColor}"
                                    FontSize="22"
                                    VerticalAlignment="Center"
                                    Margin="30 0" />
 
-                            <StackPanel Grid.Column="1">
-
-                            </StackPanel>
+                            
 
                             <StackPanel Grid.Column="2"
                                         Orientation="Horizontal"
@@ -70,7 +68,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="0"
-                            Background="#1e2b3f" CornerRadius="0 0 10 15">
+                            Background="{StaticResource NavBarBackground}" CornerRadius="0 0 10 15">
                         <StackPanel Margin="10 30">
                             <Button Width="100"
                                     Height="60"

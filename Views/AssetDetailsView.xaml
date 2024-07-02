@@ -22,14 +22,14 @@
                     Value="70" />
 
             <Setter Property="Foreground"
-                    Value="{StaticResource FontColor}" />
+                    Value="{DynamicResource FontColor}" />
             <Setter Property="Command"
                     Value="{Binding GetHistoryCommand}" />
             <Setter Property="FontSize"
                     Value="12" />
         </Style>
     </UserControl.Resources>
-    <Border Style="{StaticResource BorderViewStyle}">
+    <Border Style="{DynamicResource BorderViewStyle}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -71,7 +71,7 @@
                                             Color="#68B1B1"
                                             ItemsSource="{Binding AssetHistoryDates}"
                                             DataFieldX="Time"
-                                            Foreground="{StaticResource FontColor}"
+                                            Foreground="{DynamicResource FontColor}"
                                             DataFieldY="PriceUsd" />
                         </oxy:Plot>
 
@@ -138,13 +138,13 @@
                                 Margin="20,10,0,0"
                                 Height="60"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
 
                     <TextBlock  Text="High: " Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
                                 Foreground="{StaticResource FontColor}" />
                     <TextBlock  Text="{Binding HighPrice, Converter={StaticResource CurrencyConverter}}"
-                                Foreground="{StaticResource FontColor}"
+                                Foreground="{DynamicResource FontColor}"
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}" />
@@ -155,36 +155,36 @@
                                 HorizontalAlignment="Right"
                                 Grid.Column="0"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
                     <TextBlock  Text="{Binding LowPrice, Converter={StaticResource CurrencyConverter}}"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
                                 Grid.Row="2"
                                 Grid.Column="1"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
 
                     <TextBlock  Text="Average: "
                                 Grid.Row="3"
                                 Grid.Column="0"
                                 HorizontalAlignment="Right"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
                     <TextBlock  Text="{Binding AveragePrice, Converter={StaticResource CurrencyConverter}}"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
                                 Grid.Row="3"
                                 Grid.Column="1"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
 
                     <TextBlock  Text=" Change: "
                                 HorizontalAlignment="Right"
                                 Grid.Row="4"
                                 Grid.Column="0"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
                     <TextBlock  Text="{Binding PercentChange, StringFormat={}{0:#0.00'%'}}"
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                                Foreground="{StaticResource FontColor}" />
+                                Foreground="{DynamicResource FontColor}" />
                 </Grid>
 
 
@@ -195,7 +195,7 @@
                           FontSize="14"
                           Height="230"
                           Width="700"
-                          RowBackground="{StaticResource AttentionToActionBrush}"
+                          RowBackground="{DynamicResource AttentionToActionBrush}"
                           IsReadOnly="True"
                           HorizontalGridLinesBrush="{StaticResource Transparent}"
                           IsEnabled="True"

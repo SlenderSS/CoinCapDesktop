@@ -11,22 +11,20 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
 
-               
 
-                <ResourceDictionary Source="Resources\Styles\Themes\DarkTheme.xaml" />
+
+                <ResourceDictionary Source="Resources\Styles\Colors.xaml" />
                 <ResourceDictionary Source="Resources\Styles\ButtonsStyle.xaml" />
                 <ResourceDictionary Source="Resources\Styles\BordersStyle.xaml" />
                 <ResourceDictionary Source="Resources\Styles\FontsStyle.xaml" />
                 <ResourceDictionary Source="Resources\Styles\PageStyle.xaml" />
                 <ResourceDictionary Source="Resources\DataTemplates\DataTemplate.xaml" />
 
-                
-               
- <materialDesign:BundledTheme BaseTheme="Dark"
-                              PrimaryColor="BlueGrey"
-                              SecondaryColor="DeepOrange" />
 
- <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+
+                <materialDesign:BundledTheme BaseTheme="Dark" PrimaryColor="BlueGrey" SecondaryColor="DeepOrange" />
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
 
@@ -36,7 +34,7 @@
             <cmd:CloseAppCommand x:Key="CloseAppCommand" />
             <cmd:MinimizeWindowCommand x:Key="MinimizeWindowCommand" />
             <cmd:MoveWindowCommand x:Key="MoveWindowCommand" />
-            
+
             <cnv:CurrencyConverter x:Key="CurrencyConverter" />
         </ResourceDictionary>
     </Application.Resources>

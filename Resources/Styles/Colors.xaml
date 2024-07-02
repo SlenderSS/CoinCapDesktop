@@ -1,13 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-
     <SolidColorBrush x:Key="Transparent"
                      Color="Transparent"></SolidColorBrush>
     <SolidColorBrush x:Key="Background1">#222d3d</SolidColorBrush>
     <SolidColorBrush x:Key="HeaderBackground">#374963</SolidColorBrush>
     <SolidColorBrush x:Key="Background2">#374963</SolidColorBrush>
-    <SolidColorBrush x:Key="NavPanelBack">#214451</SolidColorBrush>
+    <SolidColorBrush x:Key="NavBarBackground">#1e2b3f</SolidColorBrush>
     <SolidColorBrush x:Key="FontColor"
                      Color="#c9cfda" />
 

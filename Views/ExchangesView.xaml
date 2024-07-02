@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              Style="{StaticResource Page_Style}"
              d:DesignHeight="500" d:DesignWidth="900">
-    <Border Style="{StaticResource BorderViewStyle}">
+    <Border Style="{DynamicResource BorderViewStyle}">
         <Grid>
 
             <Grid.RowDefinitions>
@@ -21,8 +21,8 @@
                      Width="100"
                      Padding="10 30 0 0"
                      HorizontalAlignment="Right"
-                     Foreground="{StaticResource FontColor}"
-                     Style="{StaticResource MaterialDesignTextBoxBase}" />
+                     Foreground="{DynamicResource FontColor}"
+                     Style="{DynamicResource MaterialDesignTextBoxBase}" />
 
 
             <Border Grid.Row="1"
@@ -35,7 +35,7 @@
                 <DataGrid ItemsSource="{Binding ExchangesCollection}"
                           Height="480"
                           AutoGenerateColumns="False"
-                          RowBackground="{StaticResource AttentionToActionBrush}"
+                          RowBackground="{DynamicResource AttentionToActionBrush}"
                           HorizontalGridLinesBrush="{StaticResource Transparent}"
                           Background="{StaticResource Transparent}"
                           IsReadOnly="True"

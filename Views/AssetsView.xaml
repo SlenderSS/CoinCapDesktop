@@ -10,7 +10,7 @@
              Style="{StaticResource Page_Style}"
              d:DataContext="{d:DesignInstance vm:AssetsViewModel}"
              d:DesignHeight="700" d:DesignWidth="1100">
-    <Border Style="{StaticResource BorderViewStyle}">
+    <Border Style="{DynamicResource BorderViewStyle}">
         <Grid>
 
             <Grid.RowDefinitions>
@@ -25,7 +25,7 @@
                          FontSize="23"
                          Padding="10 30 0 0"       
                          Width="100"
-                         Foreground="{StaticResource FontColor}"
+                         Foreground="{DynamicResource FontColor}"
                          HorizontalAlignment="Right" />
             </StackPanel>
             
@@ -41,14 +41,14 @@
                 <DataGrid ItemsSource="{Binding AssetsCollection}"
                           x:Name="AssetsDataGrid"
                           Height="410"
-                          Style="{StaticResource MaterialDesignDataGrid}"
+                          Style="{DynamicResource MaterialDesignDataGrid}"
                           ToolTip="Double click for detail information"
                           SelectedItem="{Binding SelectedAsset}"
                           AutoGenerateColumns="False"
                           Background="{StaticResource Transparent}"
                           IsReadOnly="True"
-                          RowBackground="{StaticResource AttentionToActionBrush}"
-                          HorizontalGridLinesBrush="{StaticResource Transparent}"
+                          RowBackground="{DynamicResource AttentionToActionBrush}"
+                          HorizontalGridLinesBrush="{DynamicResource Transparent}"
                           FontSize="15"
                           VirtualizingPanel.IsContainerVirtualizable="True"
                           VirtualizingPanel.IsVirtualizing="True"

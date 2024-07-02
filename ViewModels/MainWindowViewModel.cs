@@ -49,7 +49,7 @@ namespace CoinCapDesktop.ViewModels
 
         public ICommand HomeCommand { get; set; }
         public ICommand AssetsCommand { get; set; }
-        public ICommand MarketsCommand { get; set; }
+        public ICommand ExchangeCommand { get; set; }
 
         #endregion
 
@@ -93,7 +93,7 @@ namespace CoinCapDesktop.ViewModels
             #region Commands
             HomeCommand = new LambdaCommand(Home, CanHomeExecute);
             AssetsCommand = new LambdaCommand(Assets, CanAssetsExecute);
-            MarketsCommand = new LambdaCommand(Exchanges, CanExchangesExecute);
+            ExchangeCommand = new LambdaCommand(Exchanges, CanExchangesExecute);
 
             #endregion
 

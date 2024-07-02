@@ -8,10 +8,10 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        Height="800"
+        Height="600"
         Width="1100"
         mc:Ignorable="d"
-        DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}">
+        DataContext="{Binding Path=MainWindowViewModel, Source={StaticResource Locator}}">
     <Grid>
         <Border Background="{StaticResource Background1}"
                 CornerRadius="15">
@@ -65,29 +65,37 @@
 
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="130" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
+                    <Border Grid.Column="0"
+                            Background="#1e2b3f" CornerRadius="0 0 10 15">
+                        <StackPanel Margin="10 30">
+                            <Button Width="100"
+                                    Height="60"
+                                    Content="Home"
+                                    Foreground="White"
+                                    Command="{Binding HomeCommand}"
+                                    Style="{DynamicResource MaterialDesignToolButton}" />
 
-                    <StackPanel Grid.Column="0"
-                                Margin="10 30">
-                        <Button Width="180"
-                                Height="60"
-                                Content="Home"
-                                Style="{DynamicResource RoundedButtonStyle}" />
 
+                            <Button Width="100"
+                                    Height="60"
+                                    Content="Coins"
+                                    Foreground="White"
+                                    Command="{Binding AssetsCommand}"
+                                    Style="{DynamicResource MaterialDesignToolButton}" />
+                            <Button Width="100"
+                                    Height="60"
+                                    Content="Exchanges"
+                                    Foreground="White"
+                                    Command="{Binding ExchangeCommand}"
+                                    Style="{DynamicResource MaterialDesignToolButton}" />
 
-                        <Button Width="180"
-                                Height="60"
-                                Content="Coins"
-                                Style="{DynamicResource RoundedButtonStyle}" />
-                        <Button Width="180"
-                                Height="60"
-                                Content="Markets"
-                                Style="{DynamicResource RoundedButtonStyle}" />
-
-                    </StackPanel>
+                        </StackPanel>
+                    </Border >
+                    
                     <Grid Grid.Column="1">
                         <ContentControl Content="{Binding CurrentView}" />
                     </Grid>

@@ -7,6 +7,7 @@ namespace CoinCapDesktop.ViewModels
         public static IServiceCollection RegisterViewModels(this IServiceCollection services) => services
             .AddSingleton<MainWindowViewModel>()
             .AddSingleton<AssetsViewModel>()
+            .AddSingleton<ExchangesViewModel>()
             .AddSingleton<AssetDetailsViewModel>()
             .AddSingleton<ExchangesViewModel>()
             ;

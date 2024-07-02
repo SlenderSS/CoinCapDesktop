@@ -7,4 +7,17 @@
     <DataTemplate DataType="{x:Type vm:HomeViewModel}">
         <v:HomeView/>
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AssetsViewModel}">
+        <v:AssetsView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AssetDetailsViewModel}">
+        <v:AssetDetailsView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ExchangesViewModel}">
+        <v:ExchangesView />
+    </DataTemplate>
+
 </ResourceDictionary>

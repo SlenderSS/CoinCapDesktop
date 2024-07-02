@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="CoinCapDesktop.Views.AssetDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CoinCapDesktop.Views"
+             xmlns:oxy="http://oxyplot.org/wpf"
+             mc:Ignorable="d"
+             Style="{StaticResource Page_Style}"
+             d:DesignHeight="700"
+             d:DesignWidth="900">
+    <UserControl.Resources>
+
+        <Style x:Key="RoundButtonStyle"
+               TargetType="RadioButton"
+               BasedOn="{StaticResource MaterialDesignUserForegroundRadioButton}">
+            <Setter Property="Margin"
+                    Value="8" />
+            <Setter Property="Height"
+                    Value="20" />
+            <Setter Property="Width"
+                    Value="70" />
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource FontColor}" />
+            <Setter Property="Command"
+                    Value="{Binding GetHistoryCommand}" />
+            <Setter Property="FontSize"
+                    Value="12" />
+        </Style>
+    </UserControl.Resources>
+    <Border Style="{StaticResource BorderViewStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+
+                <Border Margin="20,10,20,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition  Width="100" />
+                        </Grid.ColumnDefinitions>
+
+                        <oxy:Plot Height="250"
+                                  Margin="35,10,0,0"
+                                  TextColor="White"
+                                  IsEnabled="False"
+                                  Foreground="{DynamicResource FontColor}"
+                                  Background="{DynamicResource MaterialDesignDarkSeparatorBackground}"
+                                  PlotAreaBorderColor="Transparent"
+                                  PlotMargins="30,20">
+                            <oxy:Plot.Axes>
+                                <oxy:LinearAxis Position="Left"
+                                                Title="Price"
+                                                IntervalLength="20"
+                                                MajorGridlineStyle="Dot"
+                                                TicklineColor="Gray"
+                                                MinorGridlineStyle="Dash"
+                                                AxislineColor="Gray" />
+                                <oxy:DateTimeAxis  Position="Bottom"
+                                                   StringFormat="d"
+                                                   MajorGridlineStyle="Dot"
+                                                   TicklineColor="Gray"
+                                                   MinorGridlineStyle="Dash" />
+                            </oxy:Plot.Axes>
+                            <oxy:LineSeries StrokeThickness="2"
+                                            Color="#68B1B1"
+                                            ItemsSource="{Binding AssetHistoryDates}"
+                                            DataFieldX="Time"
+                                            Foreground="{StaticResource FontColor}"
+                                            DataFieldY="PriceUsd" />
+                        </oxy:Plot>
+
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Vertical"
+                                    Margin="0,20">
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="1 day"
+                                         IsChecked="True"
+                                         CommandParameter="m1" />
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="1 week"
+                                         CommandParameter="m5" />
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="1 month"
+                                         CommandParameter="h1" />
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="3 month"
+                                         CommandParameter="h2" />
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="6 month"
+                                         CommandParameter="h6" />
+                            <RadioButton Style="{StaticResource RoundButtonStyle}"
+                                         ToolTip=""
+                                         Content="1 year"
+                                         CommandParameter="d1" />
+
+                        </StackPanel>
+                    </Grid>
+
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="750" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0"
+                      Width="220">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="50"/>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock  Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                Text="{Binding AssetData.Name}"
+                                Margin="20,10,0,0"
+                                Height="60"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+
+                    <TextBlock  Text="High: " Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+                    <TextBlock  Text="{Binding HighPrice, Converter={StaticResource CurrencyConverter}}"
+                                Foreground="{StaticResource FontColor}"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}" />
+
+
+                    <TextBlock  Text="Low: "
+                                Grid.Row="2"
+                                HorizontalAlignment="Right"
+                                Grid.Column="0"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+                    <TextBlock  Text="{Binding LowPrice, Converter={StaticResource CurrencyConverter}}"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Foreground="{StaticResource FontColor}" />
+
+                    <TextBlock  Text="Average: "
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                HorizontalAlignment="Right"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+                    <TextBlock  Text="{Binding AveragePrice, Converter={StaticResource CurrencyConverter}}"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Foreground="{StaticResource FontColor}" />
+
+                    <TextBlock  Text=" Change: "
+                                HorizontalAlignment="Right"
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+                    <TextBlock  Text="{Binding PercentChange, StringFormat={}{0:#0.00'%'}}"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                Foreground="{StaticResource FontColor}" />
+                </Grid>
+
+
+                <DataGrid Grid.Column="1"
+                          Background="Transparent"
+                          HorizontalScrollBarVisibility="Disabled"
+                          AutoGenerateColumns="False"
+                          FontSize="14"
+                          Height="230"
+                          Width="700"
+                          RowBackground="{StaticResource AttentionToActionBrush}"
+                          IsReadOnly="True"
+                          HorizontalGridLinesBrush="{StaticResource Transparent}"
+                          IsEnabled="True"
+                          ItemsSource="{Binding Markets}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Binding="{Binding ExchangeId}"
+                                             Width="130">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="ExchangeId" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn  Binding="{Binding BaseId}"
+                                             Width="100">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Base" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+
+                        <DataGridTextColumn  Binding="{Binding QuoteSymbol}"
+                                             Width="120">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="QuoteSymbol" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn  Binding="{Binding QuoteId}"
+                                             Width="90">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="QuoteId" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn  Binding="{Binding PriceUsd, Converter={StaticResource CurrencyConverter}}"
+                                             Width="100">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="Price(Usd)" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+
+                        <DataGridTextColumn  Binding="{Binding VolumeUsd24Hr, Converter={StaticResource CurrencyConverter}}"
+                                             Width="*">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Text="VolumeUsd24Hr" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

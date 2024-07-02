@@ -8,5 +8,7 @@
     <SolidColorBrush x:Key="HeaderBackground">#374963</SolidColorBrush>
     <SolidColorBrush x:Key="Background2">#374963</SolidColorBrush>
     <SolidColorBrush x:Key="NavPanelBack">#214451</SolidColorBrush>
+    <SolidColorBrush x:Key="FontColor"
+                     Color="#c9cfda" />
 
 </ResourceDictionary>
